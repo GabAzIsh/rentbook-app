@@ -17,4 +17,7 @@ use \App\Http\Controllers\RentController;
 
 Route::get('/', [HomeController::class, 'index']);
 
+
 Route::get('createrent', [RentController::class, 'index']);
+
+Route::post('createrent', [RentController::class, 'index'])->name('createrent');

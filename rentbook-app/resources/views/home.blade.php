@@ -26,10 +26,10 @@
                 <div class="mt-8 bg-white dark:bg-gray-800  shadow sm:rounded-lg">
                     <table style="width:100%;">
                         <tr style="background-color: #dddddd; padding: 8px;">
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Cost</th>
-                            <th>Rent date</th>
+                            <th>Название</th>
+                            <th>Автор</th>
+                            <th>Цена аренды(1д.)</th>
+                            <th>Дата аренды</th>
                         </tr>
 
 {{--                        @if ($books->count())--}}
