@@ -32,24 +32,19 @@
                             <th>Rent date</th>
                         </tr>
 
-                        @if ($books->count())
-                            @foreach($books as $book)
-                                <div class="mb-4">
-                                    <a href="" class="font-bold">{{ $book->user->name }}</a> <span class="text-grey-600
-                        text-sm">{{ $book->created_at->diffForHumans() }}</span>
+{{--                        @if ($books->count())--}}
+{{--                            @foreach($books as $book)--}}
+{{--                                <tr>--}}
+{{--                                    <td>{{ $book->title }}</td>--}}
+{{--                                    <td>{{ $book->author }}</td>--}}
+{{--                                    <td>{{ $book->cost }}</td>--}}
+{{--                                    <td>{{ $book->rentdate }}</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                        @else--}}
+{{--                            <p>There are no books</p>--}}
+{{--                        @endif--}}
 
-                                    <p class="mb-2">{{ $book->body }}</p>
-                                </div>
-                            @endforeach
-                        @else
-                            <p>There are no posts</p>
-                        @endif
-                        <tr>
-                            <td>{{ $book->title }}</td>
-                            <td>{{ $book->author }}</td>
-                            <td>{{ $book->cost }}</td>
-                            <td>{{ $book->rentdate }}</td>
-                        </tr>
                     </table>
 
                 </div>
