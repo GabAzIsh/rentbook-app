@@ -9,8 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $books = Book::where('active', 1)
-            ->orderBy('name', 'desc')
+        $books = Book::orderBy('name', 'desc')
             ->take(20)
             ->get();; // return all
         return view('home', [
