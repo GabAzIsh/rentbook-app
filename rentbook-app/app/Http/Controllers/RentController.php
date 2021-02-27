@@ -10,4 +10,14 @@ class RentController extends Controller
     {
         return view('getrent');
     }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'body' => 'required'
+        ]);
+
+        $request->user()->posts()->create($request->only('body'));
+        return back();
+    }
 }
