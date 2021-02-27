@@ -34,8 +34,8 @@ class TooLittleMoney implements Rule
      */
     public function passes($attribute, $value)
     {
-        if ($this->cost * $this->count * $this->coefficient < $value) {
-            return false;
+        if ($this->cost * $this->count * $this->coefficient <= (int)$value) {
+            return true;
         }
     }
 
@@ -46,6 +46,6 @@ class TooLittleMoney implements Rule
      */
     public function message()
     {
-        return 'Указан слишком малеьнкий залог';
+        return 'Too little deposit specified ';
     }
 }

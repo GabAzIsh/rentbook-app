@@ -5,19 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Rent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $books = Book::addSelect(['rentdate' => Rent::select('lease_term')
-            ->whereColumn('book_id', 'books.id')
-            ->orderBy('lease_term', 'desc')
-            ->limit(20)
-        ])
-            ->get(); // return all
+
+        $data = DB::table('books')->join('rents', 'books.id', '=', 'rents.book_id')->get();
+
+//        dd($data);
         return view('home', [
-            'books' => $books
+            'books' => $data,
         ]);
     }
 }

@@ -20,7 +20,7 @@
                 <label for="book" class="sr-only">Книга - цена ренты</label>
                 <select name="book" id="book">
                     @foreach($books as $book)
-                    <option value=" {{ $book->title.'@'.$book->cost }} ">{{ $book->title.' - цена за день: '.$book->cost }}</option>
+                    <option value=" {{ $book->id.'@'.$book->cost }} ">{{ $book->title.' - цена за день: '.$book->cost }}</option>
                     @endforeach
                 </select>
                 @error('book')
@@ -33,7 +33,7 @@
                 <label for="tenant" class="sr-only">Арендатор</label>
                 <select name="tenant" id="tenant">
                 @foreach($tenants as $tenant)
-                    <option value=" {{ $tenant->name }} ">{{ $tenant->name }}</option>
+                    <option value=" {{ $tenant->id }} ">{{ $tenant->name }}</option>
                 @endforeach
                 </select>
                 @error('tenant')
@@ -57,7 +57,7 @@
                 <label for="leaseterm" class="sr-only">Срок аренды</label>
                 <input type="date" name="leaseterm" id="leaseterm"
                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('leaseterm')
-                           border-red-500 @enderror" value="">
+                           border-red-500 @enderror" value="{{ old('leaseterm') }}">
                 @error('leaseterm')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -67,7 +67,7 @@
             <div class="mb-4">
                 <label for="bail" class="sr-only">Сумма залога</label>
                 <input type="number" name="bail" id="bail"
-                       class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="">
+                       class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="{{ old('bail') }}">
             </div>
             <div>
                 <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Создать аренду</button>

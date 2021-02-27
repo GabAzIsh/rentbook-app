@@ -38,7 +38,7 @@
                                     <td>{{ $book->title }}</td>
                                     <td>{{ $book->author }}</td>
                                     <td>{{ $book->cost }}</td>
-                                    <td>{{ $book->rentdate }}</td>
+                                    <td>{{ $book->lease_term }}</td>
                                 </tr>
                             @endforeach
                         @else

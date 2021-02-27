@@ -15,7 +15,7 @@ class Book extends Model
         'cost'
     ];
 
-    public function rent()
+    public function rents()
     {
         return $this->hasMany(Rent::class);
     }
