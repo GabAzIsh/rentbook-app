@@ -17,10 +17,10 @@
         <form action="{{ route('createrent') }}" method="post">
             @csrf
             <div class="mb-4">
-                <label for="book" class="sr-only">Книга</label>
+                <label for="book" class="sr-only">Книга - цена ренты</label>
                 <select name="book" id="book">
                     @foreach($books as $book)
-                    <option value=" {{ $book->title }} ">{{ $book->title }}</option>
+                    <option value=" {{ $book->title.'@'.$book->cost }} ">{{ $book->title.' - цена за день: '.$book->cost }}</option>
                     @endforeach
                 </select>
                 @error('book')

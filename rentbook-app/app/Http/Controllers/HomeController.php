@@ -15,7 +15,7 @@ class HomeController extends Controller
             ->orderBy('lease_term', 'desc')
             ->limit(20)
         ])
-            ->get();; // return all
+            ->get(); // return all
         return view('home', [
             'books' => $books
         ]);
