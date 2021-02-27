@@ -28,14 +28,7 @@ class RentController extends Controller
             'leaseterm' => 'required',
             'bail' => ['required', new TooLittleMoney((int)$request->cost, (int)$request->count)],
         ]);
-//        dd((int)$request->book, (int)$request->tenant, $request->count, $request->leaseterm, $request->bail);
-//        Rent::create([
-//            'book_id' => (int)$request->book,
-//            'tenant_id' => (int)$request->tenant,
-//            'count' => $request->count,
-//            'lease_term' =>$request->leaseterm,
-//            'bait' => $request->bail,
-//        ]);
+
 
         $rent = new Rent;
             $rent->book_id = (int)$request->book;
