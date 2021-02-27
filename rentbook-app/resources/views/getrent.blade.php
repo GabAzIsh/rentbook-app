@@ -11,16 +11,18 @@
 {{--        <link rel="stylesheet" href="{{asset('css/app.css')}}">--}}
 </head>
 
-<body class="bg-gray-200">
-<div class="flex justify-center">
-    <div class="w-4/12 bg-white p-6 rounded-lg">
+<body class="">
+<div class="">
+    <div class="">
         <form action="{{ route('createrent') }}" method="post">
             @csrf
             <div class="mb-4">
                 <label for="book" class="sr-only">Книга</label>
-                <input type="text" name="book" id="name" placeholder="Book title"
-                       class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('book')
-                           border-red-500 @enderror" value="{{ old('book') }}">
+                <select name="book" id="book">
+                    @foreach($books as $book)
+                    <option value=" {{ $book->title }} ">{{ $book->title }}</option>
+                    @endforeach
+                </select>
                 @error('book')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -29,9 +31,11 @@
             </div>
             <div class="mb-4">
                 <label for="tenant" class="sr-only">Арендатор</label>
-                <input type="text" name="tenant" id="tenant" placeholder="tenant"
-                       class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('tenant')
-                           border-red-500 @enderror" value="{{ old('tenant') }}">
+                <select name="tenant" id="tenant">
+                @foreach($tenants as $tenant)
+                    <option value=" {{ $tenant->name }} ">{{ $tenant->name }}</option>
+                @endforeach
+                </select>
                 @error('tenant')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -40,7 +44,7 @@
             </div>
             <div class="mb-4">
                 <label for="count" class="sr-only">Количество</label>
-                <input type="number" name="count" id="count" placeholder="Your E-mail"
+                <input type="number" name="count" id="count"
                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('count')
                            border-red-500 @enderror" value="{{ old('count') }}">
                 @error('count')
@@ -51,7 +55,7 @@
             </div>
             <div class="mb-4">
                 <label for="leaseterm" class="sr-only">Срок аренды</label>
-                <input type="date" name="leaseterm" id="leaseterm" placeholder="Chose a leaseterm"
+                <input type="date" name="leaseterm" id="leaseterm"
                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('leaseterm')
                            border-red-500 @enderror" value="">
                 @error('leaseterm')
@@ -62,7 +66,7 @@
             </div>
             <div class="mb-4">
                 <label for="bail" class="sr-only">Сумма залога</label>
-                <input type="number" name="bail" id="bail" placeholder="Enter a bail"
+                <input type="number" name="bail" id="bail"
                        class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="">
             </div>
             <div>

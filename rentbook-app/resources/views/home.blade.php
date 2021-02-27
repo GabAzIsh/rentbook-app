@@ -32,18 +32,18 @@
                             <th>Дата аренды</th>
                         </tr>
 
-{{--                        @if ($books->count())--}}
-{{--                            @foreach($books as $book)--}}
-{{--                                <tr>--}}
-{{--                                    <td>{{ $book->title }}</td>--}}
-{{--                                    <td>{{ $book->author }}</td>--}}
-{{--                                    <td>{{ $book->cost }}</td>--}}
-{{--                                    <td>{{ $book->rentdate }}</td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
-{{--                        @else--}}
-{{--                            <p>There are no books</p>--}}
-{{--                        @endif--}}
+                        @if ($books->count())
+                            @foreach($books as $book)
+                                <tr>
+                                    <td>{{ $book->title }}</td>
+                                    <td>{{ $book->author }}</td>
+                                    <td>{{ $book->cost }}</td>
+                                    <td>{{ $book->rentdate }}</td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <p>There are no books</p>
+                        @endif
 
                     </table>
 
