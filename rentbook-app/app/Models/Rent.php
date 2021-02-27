@@ -20,8 +20,8 @@ class Rent extends Model
         return $this->belongsTo(Book::class);
     }
 
-//    public function tenant()
-//    {
-//        return $this->hasMany(Tenant::class);
-//    }
+    public function tenant()
+    {
+        return $this->hasMany(Tenant::class);
+    }
 }
